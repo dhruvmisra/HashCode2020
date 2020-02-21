@@ -81,21 +81,17 @@ void solve() {
       cin>>id;
       l.score += scores[id];
       l.books.push_back(id);
-      //new
       freq[id]++;
     }
     l.index = i;
 
     if(l.signupDays < D) {
-      //new
-      // l.calculateEI();
       lib.push_back(l);
     }
 
     l.clear();
   }
 
-  //new 
   for(i=0; i<L; i++){
     for(j=0; j<lib[i].noBooks; j++) {
       lib[i].commonIndex += freq[lib[i].books[j]];
@@ -105,7 +101,6 @@ void solve() {
     // if(lib[i].index == 387)
     //   lib[i].print();
   }
-  // log(1, freq);
 
   sort(lib.begin(), lib.end(), sortLib);
 
