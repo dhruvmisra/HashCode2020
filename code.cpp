@@ -2,24 +2,6 @@
 #define ll long long
 using namespace std;
 
-//Logging DS
-typedef int DEBUG_LEVEL;
-int d_level = 0;
-template<typename Key, typename Value>
-std::ostream& operator<<(std::ostream& os, const std::pair<const Key, Value>& p)
-{
-    os << p.first << " => " << p.second;
-    return os;
-}
-template<typename Container>
-void log(DEBUG_LEVEL level, const Container& c) {
-    if (level >= d_level) {
-        for(typename Container::const_iterator it = c.begin();
-            it != c.end(); ++it)
-        std::cout << *it << '\n';
-    }
-}
-
 class Library{
   public:
     ll noBooks;
@@ -149,6 +131,8 @@ int main() {
     cout.rdbuf(stream_buffer_file); 
 
     solve();
+
+    file.close();
   }
   return 0;  
 }
